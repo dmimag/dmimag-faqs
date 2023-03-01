@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The public-facing functionality of the plugin.
  *
@@ -113,10 +112,10 @@ class Dmimag_Faqs_Public {
 	}
   
   /**
-	 * DMI Mag FAQs Shortcode
-	 *
-	 * @since    1.0.0
-	 */  
+   * DMI Mag FAQs Shortcode
+   *
+   * @since    1.0.0
+   */  
   function dmimag_faqs_shortcode( $atts ) {
     ob_start();
     
@@ -199,9 +198,7 @@ class Dmimag_Faqs_Public {
       wp_reset_postdata();
       
     }
-
     return ob_get_clean();
-    
   }
 }
 ?>

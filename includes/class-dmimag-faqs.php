@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -89,7 +88,7 @@ class Dmimag_Faqs {
     
 		$this->plugin_name = 'dmimag-faqs';
     
-    $this->post_type = 'dmimag-faqsq';
+    $this->post_type = 'dmimag-faq';
 
 		$this->load_dependencies();
     
