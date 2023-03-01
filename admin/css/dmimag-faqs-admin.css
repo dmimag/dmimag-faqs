@@ -1,0 +1,520 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+/*.taxonomy-dmimag-faqs-group .fixed .column-posts {
+  width: 15%;
+}
+
+.taxonomy-dmimag-faqs-group .fixed .column-slug {
+  width: 10%;
+}*/
+
+/*.taxonomy-dmimag-faqs-group .fixed .column-description, 
+.taxonomy-dmimag-faqs-group .fixed .column-slug {
+  display: none;  
+}*/
+
+/*.column-dmimag_faqs_group_shortcode {
+  width: 40%;
+}
+
+.taxonomy-dmimag-faqs-group 
+.dmimag_faqs_group_shortcode.column-dmimag_faqs_group_shortcode {
+  position: relative;
+}*/
+
+.dmimag-faqs-shortcode {
+  width: 300px;
+  padding: 5px 8px!important;
+  font-size: 14px;
+}
+
+.dmimag-faqs-copy-to-clipboard {
+  margin-left: 10px;
+  display: inline-block;
+  width: 30px;
+  height: 26px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../images/icon-content-copy.svg');
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/*.dmimag-faqs, .dmimag-faqs * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}*/
+
+#dmimag-faqs.postbox {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+#dmimag-faqs.postbox .postbox-header h2, #dmimag-faqs.postbox .handlediv {
+  display: none;
+}
+
+.dmimag-faqs {
+  margin-top: 20px;
+  margin-left: -12px;
+  margin-bottom: -12px;
+  margin-right: -12px;
+  
+  /*margin: 20px;**/
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.dmimag-faqs.dmi-grid-metabox-faq .dmi-metabox-text input[type=text] {
+  width: 100%;
+  font-size: 22px;
+  line-height: 22px;
+  padding: 5px 8px;
+}
+
+/* dmi */
+
+.dmi-overflow-hidden {
+  overflow: hidden;
+}
+
+/* Grid */
+
+.dmi-wrap {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.dmi-grid {
+  margin: 0 auto;
+}
+
+.dmi-grid > .dmi-grid-row {
+  margin: 0 auto;
+}
+
+/* Row */
+
+.dmi-grid-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dmi-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* end Row */
+
+/* Col */
+
+.dmi-grid-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  width: 100%;
+}
+
+.dmi-grid-col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+}
+
+.dmi-grid-col-1 {
+  flex: 0 0 6.25%;
+  max-width: 6.25%;
+}
+
+.dmi-grid-col-2 {
+  flex: 0 0 12.5%;
+  max-width: 12.5%;
+}
+
+.dmi-grid-col-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+#side-sortables .dmi-metabox-description, #side-sortables .dmi-metabox-field {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.dmi-grid-col-sidebar {
+  flex: 0 0 21%;
+  max-width: 21%;
+}
+
+.dmi-grid-col-4 {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.dmi-grid-col-5 {
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.dmi-grid-col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.dmi-grid-col-7 {
+}
+
+.dmi-grid-col-8 {
+  flex: 0 0 66.666667%;
+  max-width: 66.666667%;
+}
+
+.dmi-grid-col-9 {
+  flex: 0 0 75%;
+  max-width: 75%;
+}
+
+.dmi-grid-col-10 {
+}
+
+.dmi-grid-col-11 {
+}
+
+.dmi-grid-col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+/* end Col */
+
+.dmi-justify-content-start {
+  justify-content: flex-start;
+}
+
+.dmi-justify-content-end {
+  justify-content: flex-end;
+}
+
+.dmi-justify-content-center {
+  justify-content: center;
+}
+
+.dmi-justify-content-between {
+  justify-content: space-between;
+}
+
+.dmi-justify-content-around {
+  justify-content: space-around;
+}
+
+/* */
+
+.dmi-align-items-start {
+  align-items: flex-start;
+}
+
+.dmi-align-items-end {
+  align-items: flex-end;
+}
+
+.dmi-align-items-center {
+  align-items: center;
+}
+
+.dmi-align-items-baseline {
+  align-items: baseline;
+}
+
+.dmi-align-items-stretch {
+  align-items: stretch;
+}
+
+/*
+.dmi-align-self-start
+.dmi-align-self-end
+.dmi-align-self-center
+.dmi-align-self-baseline
+.dmi-align-self-stretch
+
+.dmi-align-content-start
+.dmi-align-content-end
+.dmi-align-content-center
+.dmi-align-content-around
+.dmi-align-content-stretch
+*/
+
+.dmi-border-top {
+  border-top: 2px solid #135e96;
+}
+
+
+/* Metabox style */
+
+.dmi-metabox {
+  /*border: 1px solid #cccccc;*/
+}
+
+.dmi-metabox:not(:last-child) {
+  border-bottom: 1px solid #cccccc;
+}
+
+/*.dmi-metabox > .dmi-grid-col, .dmi-metabox-pdt .dmi-grid-row > .dmi-grid-col  {
+  padding: 10px 20px;
+}*/
+
+.dmi-metabox h5, .dmi-metabox h4, .dmi-metabox h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.dmi-metabox-description {
+  flex-direction: column;
+  display: flex;
+  background-color: #f9f9f9;
+}
+
+.dmi-metabox h4 {
+  font-size: 16px;
+}
+
+.dmi-metabox-description span {
+  font-size: 12px;
+  font-style: italic;
+}
+
+.dmi-metabox-description {
+  padding: 20px;
+}
+
+.dmi-metabox-field, .dmi-grid-metabox .dmi-autocomplete-field {
+  padding: 20px;
+}
+
+.dmi-metabox textarea {
+  width: 100%;
+  resize: none;
+  /*height: auto;*/
+}
+
+/* Autocomplete */
+
+.dmi-autocomplete {
+  border: 1px solid #7e8993;
+  border-radius: 4px;
+  position: relative;
+}
+
+.dmi-autocomplete-search { /* .dmi-metabox-autocomplete  */
+  margin: 0!important;
+  padding: 6px 40px 6px 10px;
+  height: 40px;
+  /*-webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  -ms-transition: border-color 0.3s ease-in-out;
+  -o-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;*/
+  border: none!important;
+  font-size: 12px;
+  outline: none;
+  width: 100%;
+  border-radius: 4px;
+}
+
+.dmi-autocomplete-results {
+  min-height: 40px;
+  /*max-height: 200px;*/
+  overflow-y: auto;
+  width: 100%;
+  border-top: 1px solid #ddd;
+  border-bottom: none!important;
+  border-left: none!important;
+  border-right: none!important;
+  padding: 6px 10px;
+}
+
+.dmi-autocomplete-result {
+  padding:5px;
+}
+
+.dmi-autocomplete-result .dmi-result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dmi-autocomplete-result .dmi-result-remove, .dmi-field .dmi-result-remove {
+  width:24px;
+  height:24px;
+  background-color: #00669b;  
+  border-radius: 50%;
+  color:#fff;
+  text-align: center;
+  flex: 24px 0 0;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 0;
+  line-height: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../images/dmimag-core-icon-close.png');
+  background-size: 12px;
+}
+
+.dmi-result-title {
+  font-size: 16px;
+}
+
+.ui-widget.ui-widget-content.ui-autocomplete {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.ui-autocomplete-loading {
+  background-size: 24px;
+  background-image: url('../images/dmimag-core-preloader.svg')!important;
+  background-position: right 10px center!important;
+}
+
+.ui-front {
+  z-index: 100001!important;
+}
+
+.ui-menu .ui-menu-divider {
+  margin: 0!important;
+  border-width: 0!important;
+}
+
+.dmi-metabox .dmimag-faqs-button-remove {
+  margin: 5px 0;
+}
+
+/* Place, date end time event */
+
+.dmi-metabox-pdt {
+  padding: 0 30px;
+}
+
+.dmi-metabox-pdt:not(:first-child) {
+  margin-top: 40px;
+  border-top: 4px solid #135e96;
+  padding-top: 30px;
+}
+
+.dmi-metabox-pdt:last-child {
+  margin-bottom: 30px;
+}
+
+.dmi-metabox-checkbox + .dmi-metabox-pdt {
+  margin-top: 0;
+}
+
+.dmi-grid-date {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+/*.dmi-metabox-pdt:nth-child(even) .dmi-grid-date {
+  background-color: #f5f5f5;
+}*/ 
+
+.dmi-grid-date:not(:first-child) {
+  margin-top: 20px;
+}
+
+.dmi-grid-date .dmi-time-field {
+  width: 100px;
+  display: inline-block;
+  position: relative;
+  margin: 0  10px 10px 0;
+}
+
+.dmi-grid-date .dmi-time-field input {
+  width: 65px;
+}
+
+.dmi-grid-date .dmi-time-field .dmi-result-remove {
+  position: absolute;
+  right: 0;
+  top: 3px;
+}
+
+/* Switch */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  max-width: 60px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 6px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #007cba;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #007cba;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

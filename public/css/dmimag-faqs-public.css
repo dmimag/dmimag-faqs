@@ -1,0 +1,122 @@
+.dmi-faqs-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dmi-faqs-row-guid {
+  flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 768px) {
+  .dmi-faqs-row-guid {
+    flex-direction: column-reverse;
+  }
+}
+
+.dmi-faqs-col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  width: 100%;
+}
+
+.dmi-faqs-col-nav {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+@media only screen and (max-width: 768px) {
+  .dmi-faqs-col-nav {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.dmi-faqs-col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: none;
+}
+
+.dmi-faqs-row-guid .dmi-faqs-col {
+  padding: 5px;
+}
+
+.dmi-faqs-row-accordion .dmi-faq {
+  border-top: 2px solid #cccccc;
+}
+
+.dmi-faqs-row-guid .dmi-faq, .dmi-faqs-row-guid .dmi-faq-nav {
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px 0 rgb(41 39 89 / 15%);
+  margin-bottom: 20px;
+}
+
+.dmi-faqs-row-guid .dmi-faq-nav {
+  padding: 20px;
+  top: 60px;
+  position: sticky;
+}
+
+.dmi-faqs-row-guid .dmi-faq-nav li:last-child {
+  margin-bottom: 0;
+}
+
+.dmi-faqs-row-accordion .dmi-faq:last-child {
+  border-bottom: 2px solid #cccccc;
+}
+
+.dmi-faq-title, .dmi-faq-content {
+  padding: 20px 0;
+  margin-bottom: 0;
+}
+
+.dmi-faqs-row-accordion .dmi-faq-content {
+  display: none;
+}
+
+.dmi-faqs-row-accordion .dmi-faq-content.dmi-faq-content-active {
+  display: block;
+}
+
+.dmi-faq-title {
+  font-weight: bold;
+  position: relative;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dmi-faqs-row-accordion .dmi-faq-title {
+  padding-left: 50px;
+   cursor: pointer;
+}
+
+.dmi-faqs-row-accordion .dmi-faq-title:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  width: 30px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url('../images/icon-arrow-down.svg');
+}
+
+.dmi-faqs-row-accordion .dmi-faq-title-active:before {
+  background-image: url('../images/icon-arrow-up.svg');
+}
+
+.dmi-faq-content {
+  padding: 0 10px 10px 10px;
+}
+
+.dmi-faqs-row-accordion .dmi-faq-content {
+  padding: 20px 10px;
+}
+
+.dmi-faqs-row-accordion .dmi-faq-content {
+  border-top: 1px solid #cccccc;
+}
