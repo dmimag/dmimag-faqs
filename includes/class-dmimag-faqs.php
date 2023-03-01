@@ -194,7 +194,7 @@ class Dmimag_Faqs {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Dmimag_Faqs_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Dmimag_Faqs_Admin( $this->get_plugin_name(), $this->get_version(), $this->get_post_type() );
 
     /**
      * Custom Post Types

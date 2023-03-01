@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -30,6 +29,15 @@ class Dmimag_Faqs_Admin {
 	 * @var      string    $plugin_name    The ID of this plugin.
 	 */
 	private $plugin_name;
+  
+  /**
+   * Custom post type of the plugin.
+   *
+   * @since    1.0.0
+   * @access   protected
+   * @var      string    $post_type
+   */
+  protected $post_type;
 
 	/**
 	 * The version of this plugin.
@@ -47,10 +55,11 @@ class Dmimag_Faqs_Admin {
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct( $plugin_name, $version, $post_type ) {
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+    $this->post_type = $post_type;
 
 	}
 
@@ -158,3 +167,4 @@ class Dmimag_Faqs_Admin {
   }
 
 }
+?>
