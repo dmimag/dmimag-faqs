@@ -1,0 +1,2 @@
+# dmimag-faqs
+FAQs Plugin
