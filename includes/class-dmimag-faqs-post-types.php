@@ -1,13 +1,12 @@
 <?php
-
 /**
  * Register custom post type
  *
- * @link       http://joe.szalai.org
+ * @link       https://faqs.dmimag.site
  * @since      1.0.0
  *
- * @package    Exopite_Portfolio
- * @subpackage Exopite_Portfolio/includes
+ * @package    Dmimag_Faqs
+ * @subpackage Dmimag_Faqs/includes
  */
 class Dmimag_Faqs_Post_Types {
   
@@ -58,7 +57,6 @@ class Dmimag_Faqs_Post_Types {
   /**
    * Register custom post type
    *
-   * @link https://codex.wordpress.org/Function_Reference/register_post_type
    */
   private function register_single_post_type( $fields ) {
 
@@ -204,8 +202,6 @@ class Dmimag_Faqs_Post_Types {
   /**
    * Assign capabilities to users
    *
-   * @link https://codex.wordpress.org/Function_Reference/register_post_type
-   * @link https://typerocket.com/ultimate-guide-to-custom-post-types-in-wordpress/
    */
   public function assign_capabilities( $caps_map, $users  ) {
 
@@ -225,17 +221,10 @@ class Dmimag_Faqs_Post_Types {
 
   /**
    * Create post types
+   *
    */
   public function create_custom_post_type() {
 
-    /**
-     * This is not all the fields, only what I find important. Feel free to change this function ;)
-     *
-     * @link https://codex.wordpress.org/Function_Reference/register_post_type
-     *
-     * For more info on fields:
-     * @link https://github.com/JoeSz/WordPress-Plugin-Boilerplate-Tutorial/blob/9fb56794bc1f8aebfe04e99b15881db0c4bc61bd/plugin-name/includes/class-plugin-name-post_types.php#L230
-     */
     $post_types_fields = array(
       array(
         'slug'                  => $this->post_type,
@@ -246,44 +235,18 @@ class Dmimag_Faqs_Post_Types {
         'has_archive'           => false,
         'hierarchical'          => false,
         'menu_icon'             => 'dashicons-media-text',
-        'menu_position'         => 21,
-        
+        'menu_position'         => 21,        
         'public'                => false,
-        'publicly_queryable'    => false,
-        
-        'exclude_from_search'   => true,
-        
+        'publicly_queryable'    => false,        
+        'exclude_from_search'   => true,        
         'show_ui'               => true,
-        'show_in_menu'          => true,
-        
-        'query_var'             => false,
-        
+        'show_in_menu'          => true,        
+        'query_var'             => false,        
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => false,
         'supports'              => array(
-          'title',
-          /*'excerpt',*/
-          /*'editor',
-          
-          'author',
-          'thumbnail'*/
-        ),
-      
-        /*'taxonomies'            => array(
-
-          array(
-            'taxonomy'          => 'dmimag-faqs-group',
-            'plural'            => __('FAQs Group', $this->plugin_name),
-            'single'            => __('FAQs Group', $this->plugin_name),
-            'post_types'        => array( $this->post_type ),
-            'public' => false,
-            'publicly_queryable' => false,
-            'query_var' => false,
-            'hierarchical'      => false,
-            'meta_box_cb'       => 'post_categories_meta_box'
-          ),
-
-        )*/
+          'title'
+        )
       )
     );
 
@@ -292,3 +255,4 @@ class Dmimag_Faqs_Post_Types {
     }
   }
 }
+?>

@@ -123,9 +123,10 @@ class Dmimag_Faqs_Public {
           
           $post_content = wp_unslash( json_decode( $query->post->post_content, true ) );
           
-          foreach( $post_content as $faq ) {
+          if( ! empty( $post_content ) && is_array( $post_content ) ) {
+          
+            foreach( $post_content as $faq ) {
             $i++;
-          //print_r( $query->post->post_content );
 ?>
             <div <?php if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) { ?>id="faq-<?php echo $i; ?>" <?php } ?>class="dmi-faq">
               <div class="dmi-faq-title">
@@ -146,12 +147,13 @@ class Dmimag_Faqs_Public {
               </div>
             </div>
 <?php
+            }
           }
         } // end while
 ?>
           </div>
 <?php
-        if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) {
+        if( isset( $atts['type'] ) && $atts['type'] == 'guide' && isset( $faqs_title[$i] ) ) {
 ?>
           <div class="dmi-faqs-col dmi-faqs-col-nav">
             <ul class="dmi-faq-nav">

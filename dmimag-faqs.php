@@ -6,7 +6,7 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://dmimag.site
+ * @link              https://faqs.dmimag.site
  * @since             1.0.0
  * @package           Dmimag_Faqs
  *
@@ -14,9 +14,9 @@
  * Plugin Name:       DmiMag FAQs
  * Plugin URI:        https://faqs.dmimag.site
  * Description:       FAQs Plugin. Accordion Style, List Style
- * Version:           1.1.1
- * Author:            dmimag
- * Author URI:        https://dmimag.site
+ * Version:           1.1.2
+ * Author:            dmimag <support.plugins@dmimag.site>
+ * Author URI:        https://faqs.dmimag.site
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       dmimag-faqs
@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DMIMAG_FAQS_VERSION', '1.1.1' );
+define( 'DMIMAG_FAQS_VERSION', '1.1.2' );
 
 /**
  * Currently plugin dir.

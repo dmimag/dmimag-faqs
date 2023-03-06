@@ -2,21 +2,11 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://dmimag.site
+ * @link       https://faqs.dmimag.site
  * @since      1.0.1
  *
- * @package    Dmimag_Core
- * @subpackage Dmimag_Core/includes
- */
-
-/**
- * The admin-specific functionality of the plugin.
- *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
- *
- * @package    Dmimag_Core
- * @subpackage Dmimag_Core/includes
+ * @package    Dmimag_Faqs
+ * @subpackage Dmimag_Faqs/includes
  * @author     dmimag <support.plugins@dmimag.site>
  */
 
@@ -71,7 +61,6 @@ class Dmimag_Faqs_Update {
     $remote = get_transient( $this->cache_key );
 
     if( false === $remote || ! $this->cache_allowed ) {
-      #'http://dmimag.local/downloads/dmimag-core/dmimag-core.json',
       $remote = wp_remote_get(
         'https://dmimag.site/downloads/dmimag-faqs/dmimag-faqs.json',
         array(
@@ -216,6 +205,5 @@ class Dmimag_Faqs_Update {
     return $links_array;
 
   }
-
 }
 ?>

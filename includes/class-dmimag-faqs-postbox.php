@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The admin-specific functionality of the plugin.
  *
@@ -58,11 +57,6 @@ class Dmimag_Faqs_Postbox {
 	 * @param      string    $version    The version of this plugin.
 	 */
   
-  /*
-   * @link https://wp-kama.ru/question/kak-uvyazat-posty-iz-dvuh-proizvolnyh-tipov-zapisej
-   * @link https://gist.github.com/igorbenic/c37d842728d1a24ddbce79721e42b8e0 
-   *
-   */
 	public function __construct( $plugin_name, $version, $post_type ) {
 
     $this->plugin_name = $plugin_name;
@@ -128,34 +122,6 @@ class Dmimag_Faqs_Postbox {
       
     }
   }
-  
-/*https://wp-kama.ru/question/wp-editor-initialize
-
-https://www.riklewis.com/2020/05/adding-a-custom-wordpress-editor-via-javascript/
-
-https://wordpress.horje.com/code/19398
-
-https://gist.github.com/rheinardkorf/aec4d46d3833d2f7a6a27c4481ba0b44
-
-
-https://wordpress.stackexchange.com/questions/274592/how-to-create-wp-editor-using-javascript
-
-https://wordpress.stackexchange.com/questions/106639/how-to-load-wp-editor-via-ajax
-
-https://wp-kama.ru/function/wp_enqueue_editor
-
-https://wordpress.stackexchange.com/questions/279845/wp-editor-initialize-not-working-as-expected
-
-https://wordpress.stackexchange.com/questions/274592/how-to-create-wp-editor-using-javascript/274608#274608
-
-https://wordpress.stackexchange.com/questions/274592/how-to-create-wp-editor-using-javascript#comment407500_274592
-
-https://make.wordpress.org/core/2017/05/20/editor-api-changes-in-4-8/
-
-https://core.trac.wordpress.org/ticket/35760
-
-https://developer.wordpress.org/reference/functions/wp_editor/
-*/
    
   /**
    * Render postbox input, textarea
@@ -246,27 +212,6 @@ https://developer.wordpress.org/reference/functions/wp_editor/
       wp_enqueue_editor();
       wp_enqueue_media();
 
-      /*if ( csf_wp_editor_api() && class_exists( '_WP_Editors') ) {
-
-        $defaults = apply_filters( 'csf_wp_editor', array(
-          'tinymce' => array(
-            'wp_skip_init' => true
-          ),
-        ) );
-
-        $setup = _WP_Editors::parse_settings( 'csf_wp_editor', $defaults );
-
-        _WP_Editors::editor_settings( 'csf_wp_editor', $setup );
-
-      }*/
-
-      //add_action( 'print_default_editor_scripts', array( $this, 'setup_wp_editor_media_buttons' ) );
-      /*
-              if ( ! class_exists( '_WP_Editors', false ) ) {
-          require( ABSPATH . WPINC . '/class-wp-editor.php' );
-      }
-      add_action( 'admin_print_footer_scripts', array( '_WP_Editors', 'print_default_editor_scripts' ) );*/
-
     }
 
   }
@@ -285,9 +230,6 @@ https://developer.wordpress.org/reference/functions/wp_editor/
       $('.dmimag-faqs .faqcontent-editor').each(function (index, element) {
 
         var id_content = $(this).attr('id');
-
-        console.log( id_content );
-
         wp.editor.initialize( id_content, {
           tinymce: {
             wpautop: true,
@@ -301,9 +243,6 @@ https://developer.wordpress.org/reference/functions/wp_editor/
           quicktags: true,
           mediaButtons: true,
         });
-
-        //    
-        //tinymce.execCommand( 'mceAddEditor', true, id_content ); //'mceAddEdit',      
 
       });
     })( jQuery );
@@ -362,7 +301,7 @@ https://developer.wordpress.org/reference/functions/wp_editor/
 	}
   
   /**
-   * Save metabox
+   * Save postbox
    * 
    * @since    1.1.1
 	 * @param      
@@ -383,18 +322,5 @@ https://developer.wordpress.org/reference/functions/wp_editor/
 
     return $data;
   }
-  
-  /* 
-  add_action( "auto-draft_{$this->post_type}", array( $this, 'save_auto_draft_quiz' ) );
-  public function save_auto_draft_quiz( $post_id ) {
-		if ( isset( $_GET['wp_quiz_type'] ) ) {
-			update_post_meta( $post_id, 'quiz_type', sanitize_text_field( wp_unslash( $_GET['wp_quiz_type'] ) ) );
-		}
-	}
-  
-  https://wp-kama.ru/hook/default_hidden_meta_boxes
-  
-  */
-
 }
 ?>

@@ -82,7 +82,7 @@ class Dmimag_Faqs {
       
 		} else {
       
-			$this->version = '1.1.1';
+			$this->version = '1.1.2';
       
 		}
     
@@ -263,14 +263,6 @@ class Dmimag_Faqs {
     $this->loader->add_action( 'wp_insert_post_data', $plugin_postbox, 'dmimag_faqs_save_postbox', 10, 2 );
 
     /**
-     * Add taxonomy columns
-     *
-     */
-    #$this->loader->add_filter( 'manage_edit-dmimag-faqs-group_columns', $plugin_admin, 'dmimag_faqs_manage_edit_taxonomy_columns' );
-    
-    #$this->loader->add_filter( 'manage_dmimag-faqs-group_custom_column', $plugin_admin, 'dmimag_faqs_manage_taxonomy_custom_column', 10, 3 );
-    
-    /**
      * Add shortcode columns FAQs posts.
      *
      * @since    1.1.1
@@ -279,10 +271,10 @@ class Dmimag_Faqs {
     $this->loader->add_filter( "manage_{$this->get_post_type()}_posts_columns", $plugin_admin, 'dmimag_faqs_manage_dmimag_faqs_posts_columns' );
     
     /**
-	 * Render shortcode text FAQs posts.
-	 *
-	 * @since    1.1.1
-	 */    
+	   * Render shortcode text FAQs posts.
+	   *
+	   * @since    1.1.1
+	   */    
     $this->loader->add_action( "manage_{$this->get_post_type()}_posts_custom_column", $plugin_admin, 'dmimag_faqs_manage_dmimag_faqs_posts_custom_column', 10, 2 );
     
     /**
