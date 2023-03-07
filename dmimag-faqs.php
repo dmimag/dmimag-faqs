@@ -13,10 +13,10 @@
  * @wordpress-plugin
  * Plugin Name:       DmiMag FAQs
  * Plugin URI:        https://faqs.dmimag.site
- * Description:       FAQs Plugin. Accordion Style, List Style
+ * Description:       FAQs Plugin. FAQ. Accordion Style, Guide Style
  * Version:           1.1.2
  * Author:            dmimag <support.plugins@dmimag.site>
- * Author URI:        https://faqs.dmimag.site
+ * Author URI:        https://dmimag.site
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       dmimag-faqs

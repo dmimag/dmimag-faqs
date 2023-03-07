@@ -98,7 +98,11 @@ class Dmimag_Faqs {
     
 		$this->define_public_hooks();
     
-    $this->define_update_hooks();
+    /**
+     * Update plugin
+     *
+     */    
+    #$this->define_update_hooks();
 
 	}
 
@@ -316,8 +320,8 @@ class Dmimag_Faqs {
 	}
   
   /**
-	 * Register update of the hooks
-	 * of the plugin.
+	 * Register update of the hooks of the plugin.
+	 * 
 	 *
 	 * @since    1.1.1
 	 * @access   private
