@@ -82,7 +82,7 @@ class Dmimag_Faqs {
       
 		} else {
       
-			$this->version = '1.1.2';
+			$this->version = '1.2.0';
       
 		}
     
@@ -99,10 +99,10 @@ class Dmimag_Faqs {
 		$this->define_public_hooks();
     
     /**
-     * Update plugin
+     * Update this plugin
      *
      */    
-    #$this->define_update_hooks();
+    $this->define_update_hooks();
 
 	}
 

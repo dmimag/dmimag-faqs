@@ -3,28 +3,6 @@
  * included in this file.
  */
 
-/*.taxonomy-dmimag-faqs-group .fixed .column-posts {
-  width: 15%;
-}
-
-.taxonomy-dmimag-faqs-group .fixed .column-slug {
-  width: 10%;
-}*/
-
-/*.taxonomy-dmimag-faqs-group .fixed .column-description, 
-.taxonomy-dmimag-faqs-group .fixed .column-slug {
-  display: none;  
-}*/
-
-/*.column-dmimag_faqs_group_shortcode {
-  width: 40%;
-}
-
-.taxonomy-dmimag-faqs-group 
-.dmimag_faqs_group_shortcode.column-dmimag_faqs_group_shortcode {
-  position: relative;
-}*/
-
 .dmimag-faqs-shortcode {
   width: 300px;
   padding: 5px 8px!important;
@@ -55,17 +33,19 @@
   box-shadow: none;
 }
 
-#dmimag-faqs.postbox .postbox-header h2, #dmimag-faqs.postbox .handlediv {
+#dmimag-faqs.postbox .postbox-header {
   display: none;
 }
+
+/*#dmimag-faqs.postbox .postbox-header h2, #dmimag-faqs.postbox .handlediv {
+  display: none;
+}*/
 
 .dmimag-faqs {
   margin-top: 20px;
   margin-left: -12px;
   margin-bottom: -12px;
   margin-right: -12px;
-  
-  /*margin: 20px;**/
   border: 1px solid #cccccc;
   border-radius: 4px;
   background-color: #ffffff;
@@ -517,4 +497,22 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+.dmi-grid-metabox-up, .dmi-grid-metabox-down {
+  margin: 10px 5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  font: normal 20px/1 dashicons;
+}
+
+.dmi-grid-metabox-up:before {
+  content: "\f343";
+  color: inherit;
+}
+
+.dmi-grid-metabox-down:before {
+  content: "\f347";
+  color: inherit;
 }

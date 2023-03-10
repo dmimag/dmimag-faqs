@@ -144,7 +144,13 @@ class Dmimag_Faqs_Postbox {
                 dmi-grid-metabox-faq 
                 dmi-grid-metabox-pos-normal" data-faqs="<?php echo $c; ?>">
       <div class="dmi-grid-col">
-
+        <div class="dmi-metabox dmi-grid-row">
+          <div class="dmi-grid-col">
+            <div class="dmi-grid-row dmi-justify-content-end">
+              <div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-up"></div><div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-down"></div>
+            </div>
+          </div>
+        </div>
         <div class="dmi-metabox dmi-metabox-text dmi-grid-row">
           <div class="dmi-grid-col">
 
