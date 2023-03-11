@@ -82,7 +82,7 @@ class Dmimag_Faqs {
       
 		} else {
       
-			$this->version = '1.2.0';
+			$this->version = '1.2.1';
       
 		}
     
@@ -97,13 +97,6 @@ class Dmimag_Faqs {
 		$this->define_admin_hooks();
     
 		$this->define_public_hooks();
-    
-    /**
-     * Update this plugin
-     *
-     */    
-    $this->define_update_hooks();
-
 	}
 
 	/**
@@ -116,7 +109,6 @@ class Dmimag_Faqs {
 	 * - Dmimag_Faqs_Admin. Defines all hooks for the admin area.
 	 * - Dmimag_Faqs_Public. Defines all hooks for the public side of the site.
    * - Dmimag_Faqs_Post_Types. Register post types and taxonomy  the plugin
-   * - Dmimag_Faqs_Update. Defines all hooks for the update and details the plugin.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -161,12 +153,6 @@ class Dmimag_Faqs {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-dmimag-faqs-public.php';
-    
-    /**
-     * Update plugin
-     * 
-     */
-    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-dmimag-faqs-update.php';
 
 		$this->loader = new Dmimag_Faqs_Loader();
 
@@ -318,27 +304,6 @@ class Dmimag_Faqs {
     $this->loader->add_shortcode( 'dmimag-faqs', $plugin_public, 'dmimag_faqs_shortcode' );
 
 	}
-  
-  /**
-	 * Register update of the hooks of the plugin.
-	 * 
-	 *
-	 * @since    1.1.1
-	 * @access   private
-	 */
-	public function define_update_hooks() {
-    
-    $dmimag_faqs_plugin_update = new Dmimag_Faqs_Update( $this->get_plugin_name(), $this->get_version() );
-    
-    $this->loader->add_filter( 'plugins_api', $dmimag_faqs_plugin_update, 'dmimag_faqs_plugin_info', 20, 3 );
-    
-    $this->loader->add_filter( 'site_transient_update_plugins', $dmimag_faqs_plugin_update, 'dmimag_faqs_update' );
-    
-    $this->loader->add_action( 'upgrader_process_complete', $dmimag_faqs_plugin_update, 'dmimag_faqs_purge', 10, 2 ); 
-    
-    $this->loader->add_filter( 'plugin_row_meta', $dmimag_faqs_plugin_update, 'dmimag_faqs_plugin_row_meta', 25, 4 );
-    
-  }
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

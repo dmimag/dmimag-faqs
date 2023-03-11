@@ -126,23 +126,25 @@ class Dmimag_Faqs_Public {
           if( ! empty( $post_content ) && is_array( $post_content ) ) {
           
             foreach( $post_content as $faq ) {
-            $i++;
+              $i++;
 ?>
             <div <?php if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) { ?>id="faq-<?php echo $i; ?>" <?php } ?>class="dmi-faq">
               <div class="dmi-faq-title">
 <?php
-            echo $faq['faqtitle'];
+              if ( ! empty( $faq['faqtitle'] ) ) {
+                echo esc_html( $faq['faqtitle'] );
           
-            if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) {
-              $faqs_title[$i] = $faq['faqtitle'];
-            }
-          
+                if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) {
+                  $faqs_title[$i] = $faq['faqtitle'];
+                }
+              }
 ?>
               </div>
               <div class="dmi-faq-content">
 <?php
-            $content = apply_filters( 'the_content', $faq['faqcontent'] );
-            echo $content;
+              if ( ! empty( $faq['faqcontent'] ) ) {
+                echo apply_filters( 'the_content', wp_kses_post( $faq['faqcontent'] ) );
+              }
 ?>
               </div>
             </div>
@@ -153,15 +155,17 @@ class Dmimag_Faqs_Public {
 ?>
           </div>
 <?php
-        if( isset( $atts['type'] ) && $atts['type'] == 'guide' && isset( $faqs_title[$i] ) ) {
+        if( isset( $atts['type'] ) && $atts['type'] == 'guide' && isset( $faqs_title ) ) {
 ?>
           <div class="dmi-faqs-col dmi-faqs-col-nav">
             <ul class="dmi-faq-nav">
 <?php
             foreach( $faqs_title as $key => $faq_title ) {
+              if( ! empty( $faq_title ) ) {
 ?>
-              <li><a href="#faq-<?php echo $key; ?> "><?php print_r( $faq_title ); ?></a></li>
+              <li><a href="#faq-<?php echo $key; ?> "><?php echo esc_html( $faq_title ); ?></a></li>
 <?php
+              }
             }
 ?>
             </ul>

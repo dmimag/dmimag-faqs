@@ -17,10 +17,6 @@
     });
   };
   
-  /*$(document).ready( function() {
-    $('#dmimag-faqs .inside').sortable();
-  });*/
-  
   $(document).on( 'click touchstart', '.dmi-grid-metabox-up', function( event ) { 
     event.preventDefault();
     
@@ -29,8 +25,6 @@
     var faq = $(this).parents('.dmimag-faqs');
     
     var editor_id = faq.find('.faqcontent-editor').attr('id');
-    
-    console.log( wp.editor.getContent( editor_id ) );
 
     wp.editor.remove( editor_id );
     
@@ -47,9 +41,7 @@
     var faq = $(this).parents('.dmimag-faqs');
 
     var editor_id = faq.find('.faqcontent-editor').attr('id');
-    
-    console.log( wp.editor.getContent( editor_id ) );
-    
+
     wp.editor.remove( editor_id );
     
     faq.insertAfter( faq.next() );
@@ -60,7 +52,7 @@
 	});
   
   
-  $('.dmimag-faqs-copy-to-clipboard').on('click', function( event ) { // touchstart
+  $('.dmimag-faqs-copy-to-clipboard').on('click', function( event ) {
     event.preventDefault();
     $(this).prev( '.dmimag-faqs-shortcode' ).select();
     document.execCommand( 'copy' );
@@ -118,20 +110,7 @@
         dmimag_faqs.after( response );
         
         dmimag_faqs_wp_editor( $( response ).find('.faqcontent-editor').attr('id') );
-        
-        /*wp.editor.initialize( $( response ).find('.faqcontent-editor').attr('id'), {
-          tinymce: {
-            wpautop: true,
-            autoresize_min_height: 200,
-            wp_autoresize_on: true,
-            statusbar: false,
-            plugins : 'charmap colorpicker compat3x directionality fullscreen hr image lists media paste tabfocus textcolor wordpress wpautoresize wpdialogs wpeditimage wpemoji wpgallery wplink wptextpattern wpview',
-            toolbar1: 'bold italic underline strikethrough | bullist numlist | blockquote hr wp_more | alignleft aligncenter alignright | link unlink | fullscreen | wp_adv',
-            toolbar2: 'formatselect alignjustify forecolor | pastetext removeformat charmap | outdent indent | undo redo | wp_help'
-          },
-          quicktags: true,
-          mediaButtons: true,
-        });*/
+
       }
     });
 

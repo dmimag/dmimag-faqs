@@ -134,20 +134,24 @@ class Dmimag_Faqs_Postbox {
     
     if( ! empty( $content ) ) { $content = $content; } else { $content = ''; }
     
-    if( isset( $_POST['c'] ) ) {
-      $c = $_POST['c'];
+    if( isset( $_POST['c'] ) && ! empty( $_POST['c'] ) && is_numeric( $_POST['c'] ) ) {
+      $c = intval( $_POST['c'] );
+    } elseif( isset( $c ) && is_numeric( $c ) ) {
+      $c = intval( $c );
+    } else {
+      $c = rand( 55, 999 );
     }
 ?>
     <div class="dmimag-faqs 
                 dmi-grid-metabox 
                 dmi-grid-row 
                 dmi-grid-metabox-faq 
-                dmi-grid-metabox-pos-normal" data-faqs="<?php echo $c; ?>">
+                dmi-grid-metabox-pos-normal" data-faqs="<?php echo esc_attr( $c ); ?>">
       <div class="dmi-grid-col">
         <div class="dmi-metabox dmi-grid-row">
           <div class="dmi-grid-col">
-            <div class="dmi-grid-row dmi-justify-content-end">
-              <div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-up"></div><div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-down"></div>
+            <div class="dmi-grid-row dmi-justify-content-end dmi-align-items-center">
+              <div class="dmi-grid-col dmi-grid-col-auto"><?php _e( 'Sort FAQ', $this->plugin_name ); ?></div><div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-up"></div><div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-down"></div>
             </div>
           </div>
         </div>
@@ -162,7 +166,7 @@ class Dmimag_Faqs_Postbox {
 
             <div class="dmi-metabox-field dmi-grid-row">
               <div class="dmi-field dmi-grid-col">
-                <input name="faq[<?php echo $c; ?>][faqtitle]" type="text" id="faqtitle" value="<?php if( ! empty( $title ) ) { echo $title; } ?>">
+                <input name="faq[<?php echo esc_attr( $c ); ?>][faqtitle]" type="text" id="faqtitle" value="<?php if( ! empty( $title ) ) { echo esc_attr( $title ); } ?>">
               </div>
             </div>
           </div>
@@ -180,7 +184,7 @@ class Dmimag_Faqs_Postbox {
                   $r = str_shuffle( 'abcdefgjqwertyu' );
                   $wp_editor_id = 'faqcontent' . $r;
                 ?>
-                <textarea name="faq[<?php echo $c; ?>][faqcontent]" id="<?php echo $wp_editor_id; ?>" class="large-text faqcontent-editor"><?php if( ! empty( $content ) ) { echo $content; } ?></textarea>
+                <textarea name="faq[<?php echo esc_attr( $c ); ?>][faqcontent]" id="<?php echo esc_attr( $wp_editor_id ); ?>" class="large-text faqcontent-editor"><?php if( ! empty( $content ) ) { echo esc_textarea( $content ); } ?></textarea>
               </div>
             </div>
           </div>
@@ -199,7 +203,7 @@ class Dmimag_Faqs_Postbox {
     </div> <!-- end .dmimag-core.dmi-grid-row -->
 
 <?php 
-    if (!empty($_POST)) {
+    if (! empty( $_POST) ) {
       wp_die();
     }
   }
@@ -322,8 +326,30 @@ class Dmimag_Faqs_Postbox {
     if ( ! isset( $_POST['faq_wpnonce'] ) || 
         ! wp_verify_nonce( $_POST['faq_wpnonce'], 'faqs_nonce' ) ) return $data;
 
-    if ( isset( $_POST['faq'] ) && ! empty( $_POST['faq'] ) ) {
-      $data['post_content'] = wp_slash( wp_json_encode( $_POST['faq'] ) );
+    if ( isset( $_POST['faq'] ) && ! empty( $_POST['faq'] ) && is_array( $_POST['faq'] ) ) {
+      
+      $data_faq = array();
+      
+      $data['post_content'] = '';
+      
+      $c = 0;
+      
+      foreach( $_POST['faq'] as $faq ) {
+        
+        if( isset( $faq['faqtitle'] ) && !empty( $faq['faqtitle'] ) ) {
+          $data_faq[$c]['faqtitle'] = sanitize_text_field( $faq['faqtitle'] );
+        }
+        
+        if( isset( $faq['faqcontent'] ) && !empty( $faq['faqcontent'] ) ) {
+          $data_faq[$c]['faqcontent'] = sanitize_post( $faq['faqcontent'] );  //
+        }
+        
+        $c++;
+      }
+      
+      if( ! empty( $data_faq ) ) {
+        $data['post_content'] = wp_slash( wp_json_encode( $data_faq ) );
+      }
     }
 
     return $data;
