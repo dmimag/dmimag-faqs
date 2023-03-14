@@ -9,62 +9,63 @@
  * @subpackage Dmimag_Faqs/includes
  */
 class Dmimag_Faqs_Post_Types {
-  
+
   /**
-	 * The ID of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
-	 */
-	private $plugin_name;
+   * The ID of this plugin.
+   *
+   * @since    1.0.0
+   * @access   private
+   * @var      string    $plugin_name    The ID of this plugin.
+   */
+  private $plugin_name;
 
-	/**
-	 * The version of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $version    The current version of this plugin.
-	 */
-	private $version;
-  
   /**
-	 * Custom post type of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 * @var      string    $post_type
-	 */
-	private $post_type;
+   * The version of this plugin.
+   *
+   * @since    1.0.0
+   * @access   private
+   * @var      string    $version    The current version of this plugin.
+   */
+  private $version;
 
-	/**
-	 * Initialize the class and set its properties.
-	 *
-	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of the plugin.
-	 * @param      string    $version    The version of this plugin.
-	 */
-	public function __construct( $plugin_name, $version, $post_type ) {
+  /**
+   * Custom post type of the plugin.
+   *
+   * @since    1.0.0
+   * @access   private
+   * @var      string    $post_type
+   */
+  private $post_type;
 
-		$this->plugin_name = $plugin_name;
-    
-		$this->version = $version;   
-    
+  /**
+   * Initialize the class and set its properties.
+   *
+   * @since    1.0.0
+   * @param      string    $plugin_name       The name of the plugin.
+   * @param      string    $version    The version of this plugin.
+   */
+  public function __construct( $plugin_name, $version, $post_type ) {
+
+    $this->plugin_name = $plugin_name;
+
+    $this->version = $version;   
+
     $this->post_type = $post_type; 
 
-	}
+  }
 
   /**
    * Register custom post type
    *
+   * @since    1.0.0
    */
   private function register_single_post_type( $fields ) {
 
     /**
-		 * Labels used when displaying the posts in the admin and sometimes on the front end.  These
-		 * labels do not cover post updated, error, and related messages.  You'll need to filter the
-		 * 'post_updated_messages' hook to customize those.
-		 */
+     * Labels used when displaying the posts in the admin and sometimes on the front end.  These
+     * labels do not cover post updated, error, and related messages.  You'll need to filter the
+     * 'post_updated_messages' hook to customize those.
+     */
     $labels = array(
       'name'                  => $fields['plural'],
       'singular_name'         => $fields['singular'],

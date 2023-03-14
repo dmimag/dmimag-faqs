@@ -9,7 +9,6 @@
  * @subpackage Dmimag_Faqs/includes
  * @author     dmimag <support.plugins@dmimag.site>
  */
-
 class Dmimag_Faqs_Postbox {
   
   /**
