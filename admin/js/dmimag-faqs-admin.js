@@ -1,5 +1,5 @@
 (function( $ ) {
-	'use strict';
+  'use strict';
   
   function dmimag_faqs_wp_editor( editor_id ) {
     wp.editor.initialize( editor_id, {
@@ -19,8 +19,6 @@
   
   $(document).on( 'click touchstart', '.dmi-grid-metabox-up', function( event ) { 
     event.preventDefault();
-    
-    console.log( 'click' );
     
     var faq = $(this).parents('.dmimag-faqs');
     
@@ -54,8 +52,10 @@
   
   $('.dmimag-faqs-copy-to-clipboard').on('click', function( event ) {
     event.preventDefault();
+    
     $(this).prev( '.dmimag-faqs-shortcode' ).select();
     document.execCommand( 'copy' );
+    
     return false;
 	});
 
@@ -75,7 +75,6 @@
     }
     
     return false; 
-    
   });
   
   $(document).on( 'click touchstart', '.dmimag-faqs-button-add', function() {
@@ -110,7 +109,6 @@
         dmimag_faqs.after( response );
         
         dmimag_faqs_wp_editor( $( response ).find('.faqcontent-editor').attr('id') );
-
       }
     });
 
