@@ -14,7 +14,7 @@
  * Plugin Name:       DmiMag FAQs
  * Plugin URI:        https://faqs.dmimag.site
  * Description:       FAQs Plugin. FAQ. Accordion Style, Guide Style
- * Version:           1.2.1
+ * Version:           1.2.2
  * Author:            dmimag <support.plugins@dmimag.site>
  * Author URI:        https://dmimag.site
  * License:           GPL-2.0+
@@ -25,7 +25,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-	die;
+  die;
 }
 
 /**
@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'DMIMAG_FAQS_VERSION', '1.2.1' );
+define( 'DMIMAG_FAQS_VERSION', '1.2.2' );
 
 /**
  * Currently plugin dir.
@@ -52,8 +52,8 @@ define( 'DMIMAG_FAQS_BASE_FILE', plugin_basename( __FILE__ ) );
  * This action is documented in includes/class-dmimag-faqs-activator.php
  */
 function activate_dmimag_faqs() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-dmimag-faqs-activator.php';
-	Dmimag_Faqs_Activator::activate();
+  require_once plugin_dir_path( __FILE__ ) . 'includes/class-dmimag-faqs-activator.php';
+  Dmimag_Faqs_Activator::activate();
 }
 
 /**
@@ -61,8 +61,8 @@ function activate_dmimag_faqs() {
  * This action is documented in includes/class-dmimag-faqs-deactivator.php
  */
 function deactivate_dmimag_faqs() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-dmimag-faqs-deactivator.php';
-	Dmimag_Faqs_Deactivator::deactivate();
+  require_once plugin_dir_path( __FILE__ ) . 'includes/class-dmimag-faqs-deactivator.php';
+  Dmimag_Faqs_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_dmimag_faqs' );
@@ -84,10 +84,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-dmimag-faqs.php';
  * @since    1.0.0
  */
 function run_dmimag_faqs() {
-
-	$plugin = new Dmimag_Faqs();
-	$plugin->run();
-
+  
+  $plugin = new Dmimag_Faqs();
+  $plugin->run();
+  
 }
+
 run_dmimag_faqs();
 ?>

@@ -28,172 +28,173 @@
  */
 class Dmimag_Faqs {
 
-	/**
-	 * The loader that's responsible for maintaining and registering all hooks that power
-	 * the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      Dmimag_Faqs_Loader    $loader    Maintains and registers all hooks for the plugin.
-	 */
-	protected $loader;
-
-	/**
-	 * The unique identifier of this plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
-	 */
-	protected $plugin_name;
-  
   /**
-	 * Custom post type of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $post_type
-	 */
-	protected $post_type;
+   * The loader that's responsible for maintaining and registering all hooks that power
+   * the plugin.
+   *
+   * @since    1.0.0
+   * @access   protected
+   * @var      Dmimag_Faqs_Loader    $loader    Maintains and registers all hooks for the plugin.
+   */
+  protected $loader;
 
-	/**
-	 * The current version of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   protected
-	 * @var      string    $version    The current version of the plugin.
-	 */
-	protected $version;
+  /**
+   * The unique identifier of this plugin.
+   *
+   * @since    1.0.0
+   * @access   protected
+   * @var      string    $plugin_name    The string used to uniquely identify this plugin.
+   */
+  protected $plugin_name;
 
-	/**
-	 * Define the core functionality of the plugin.
-	 *
-	 * Set the plugin name and the plugin version that can be used throughout the plugin.
-	 * Load the dependencies, define the locale, and set the hooks for the admin area and
-	 * the public-facing side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function __construct() {
-    
-		if ( defined( 'DMIMAG_FAQS_VERSION' ) ) {
-      
-			$this->version = DMIMAG_FAQS_VERSION;
-      
-		} else {
-      
-			$this->version = '1.2.1';
-      
-		}
-    
-		$this->plugin_name = 'dmimag-faqs';
-    
+  /**
+   * Custom post type of the plugin.
+   *
+   * @since    1.0.0
+   * @access   protected
+   * @var      string    $post_type
+   */
+  protected $post_type;
+
+  /**
+   * The current version of the plugin.
+   *
+   * @since    1.0.0
+   * @access   protected
+   * @var      string    $version    The current version of the plugin.
+   */
+  protected $version;
+
+  /**
+   * Define the core functionality of the plugin.
+   *
+   * Set the plugin name and the plugin version that can be used throughout the plugin.
+   * Load the dependencies, define the locale, and set the hooks for the admin area and
+   * the public-facing side of the site.
+   *
+   * @since    1.0.0
+   */
+  public function __construct() {
+
+    if ( defined( 'DMIMAG_FAQS_VERSION' ) ) {
+
+      $this->version = DMIMAG_FAQS_VERSION;
+
+    } else {
+
+      $this->version = '1.2.2';
+
+    }
+
+    $this->plugin_name = 'dmimag-faqs';
+
     $this->post_type = 'dmimag-faq';
 
-		$this->load_dependencies();
-    
-		$this->set_locale();
-    
-		$this->define_admin_hooks();
-    
-		$this->define_public_hooks();
-	}
+    $this->load_dependencies();
 
-	/**
-	 * Load the required dependencies for this plugin.
-	 *
-	 * Include the following files that make up the plugin:
-	 *
-	 * - Dmimag_Faqs_Loader. Orchestrates the hooks of the plugin.
-	 * - Dmimag_Faqs_i18n. Defines internationalization functionality.
-	 * - Dmimag_Faqs_Admin. Defines all hooks for the admin area.
-	 * - Dmimag_Faqs_Public. Defines all hooks for the public side of the site.
+    $this->set_locale();
+
+    $this->define_admin_hooks();
+
+    $this->define_public_hooks();
+    
+  }
+
+  /**
+   * Load the required dependencies for this plugin.
+   *
+   * Include the following files that make up the plugin:
+   *
+   * - Dmimag_Faqs_Loader. Orchestrates the hooks of the plugin.
+   * - Dmimag_Faqs_i18n. Defines internationalization functionality.
+   * - Dmimag_Faqs_Admin. Defines all hooks for the admin area.
+   * - Dmimag_Faqs_Public. Defines all hooks for the public side of the site.
    * - Dmimag_Faqs_Post_Types. Register post types and taxonomy  the plugin
-	 *
-	 * Create an instance of the loader which will be used to register the hooks
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function load_dependencies() {
+   *
+   * Create an instance of the loader which will be used to register the hooks
+   * with WordPress.
+   *
+   * @since    1.0.0
+   * @access   private
+   */
+  private function load_dependencies() {
 
-		/**
-		 * The class responsible for orchestrating the actions and filters of the
-		 * core plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-dmimag-faqs-loader.php';
+    /**
+     * The class responsible for orchestrating the actions and filters of the
+     * core plugin.
+     */
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-dmimag-faqs-loader.php';
 
-		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-dmimag-faqs-i18n.php';
+    /**
+     * The class responsible for defining internationalization functionality
+     * of the plugin.
+     */
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-dmimag-faqs-i18n.php';
 
-		/**
-		 * The class responsible for defining all actions that occur in the admin area.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-dmimag-faqs-admin.php';
-    
+    /**
+     * The class responsible for defining all actions that occur in the admin area.
+     */
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-dmimag-faqs-admin.php';
+
     /**
      * Custom Post Types
      *
      * @link https://github.com/JoeSz/WordPress-Plugin-Boilerplate-Tutorial/blob/master/plugin-name/tutorials/custom_post_types.php
      */
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-dmimag-faqs-post-types.php';
-    
+
     /**
      * Adding Postbox to Post Types
      * 
      */
     require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-dmimag-faqs-postbox.php';
 
-		/**
-		 * The class responsible for defining all actions that occur in the public-facing
-		 * side of the site.
-		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-dmimag-faqs-public.php';
+    /**
+     * The class responsible for defining all actions that occur in the public-facing
+     * side of the site.
+     */
+    require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-dmimag-faqs-public.php';
 
-		$this->loader = new Dmimag_Faqs_Loader();
+    $this->loader = new Dmimag_Faqs_Loader();
 
-	}
+  }
 
-	/**
-	 * Define the locale for this plugin for internationalization.
-	 *
-	 * Uses the Dmimag_Faqs_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function set_locale() {
+  /**
+   * Define the locale for this plugin for internationalization.
+   *
+   * Uses the Dmimag_Faqs_i18n class in order to set the domain and to register the hook
+   * with WordPress.
+   *
+   * @since    1.0.0
+   * @access   private
+   */
+  private function set_locale() {
 
-		$plugin_i18n = new Dmimag_Faqs_i18n();
+    $plugin_i18n = new Dmimag_Faqs_i18n();
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
+    $this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
-	}
+  }
 
-	/**
-	 * Register all of the hooks related to the admin area functionality
-	 * of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_admin_hooks() {
+  /**
+   * Register all of the hooks related to the admin area functionality
+   * of the plugin.
+   *
+   * @since    1.0.0
+   * @access   private
+   */
+  private function define_admin_hooks() {
 
-		$plugin_admin = new Dmimag_Faqs_Admin( $this->get_plugin_name(), $this->get_version(), $this->get_post_type() );
+    $plugin_admin = new Dmimag_Faqs_Admin( $this->get_plugin_name(), $this->get_version(), $this->get_post_type() );
 
     /**
      * Custom Post Types
      *
      */
     $plugin_post_types = new Dmimag_Faqs_Post_Types( $this->get_plugin_name(), $this->get_version(), $this->get_post_type() );
-    
+
     $this->loader->add_action( 'init', $plugin_post_types, 'create_custom_post_type', 999 );
-    
+
     /**
      * Adding postbox to FAQs
      *
@@ -201,8 +202,8 @@ class Dmimag_Faqs {
      *
      */
     $plugin_postbox = new Dmimag_Faqs_Postbox( $this->get_plugin_name(), $this->get_version(), $this->get_post_type() ); 
-    
-    
+
+
     /*
      * Handle POST
      *
@@ -219,7 +220,7 @@ class Dmimag_Faqs {
      *
      */
     $this->loader->add_action( 'add_meta_boxes', $plugin_postbox, 'dmimag_faqs_create_postbox' );
-    
+
     /**
      * Remove default metabox
      *
@@ -227,7 +228,7 @@ class Dmimag_Faqs {
      *
      */    
     $this->loader->add_action( 'admin_menu', $plugin_postbox, 'dmimag_faqs_remove_default_meta_box' );
-    
+
     /**
      * Render text shortcode
      *
@@ -243,7 +244,7 @@ class Dmimag_Faqs {
      *
      */    
     $this->loader->add_action( 'edit_form_advanced', $plugin_postbox, 'dmimag_faqs_render_button_add' );
-    
+
     /**
      * Save post box
      *
@@ -259,42 +260,42 @@ class Dmimag_Faqs {
      *
      */
     $this->loader->add_filter( "manage_{$this->get_post_type()}_posts_columns", $plugin_admin, 'dmimag_faqs_manage_dmimag_faqs_posts_columns' );
-    
+
     /**
-	   * Render shortcode text FAQs posts.
-	   *
-	   * @since    1.1.1
-	   */    
+     * Render shortcode text FAQs posts.
+     *
+     * @since    1.1.1
+     */    
     $this->loader->add_action( "manage_{$this->get_post_type()}_posts_custom_column", $plugin_admin, 'dmimag_faqs_manage_dmimag_faqs_posts_custom_column', 10, 2 );
-    
+
     /**
      * Enqueue admin style & scripts
      *
      */    
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-    
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
-    
+    $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+
+    $this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+
     $this->loader->add_action( 'admin_enqueue_scripts', $plugin_postbox, 'dmimag_faqs_wp_enqueue_editor' );
-    
+
     $this->loader->add_action( 'admin_print_footer_scripts', $plugin_postbox, 'dmimag_faqs_wp_editor_initialize', 99 );
 
-	}
+  }
 
-	/**
-	 * Register all of the hooks related to the public-facing functionality
-	 * of the plugin.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function define_public_hooks() {
+  /**
+   * Register all of the hooks related to the public-facing functionality
+   * of the plugin.
+   *
+   * @since    1.0.0
+   * @access   private
+   */
+  private function define_public_hooks() {
 
-		$plugin_public = new Dmimag_Faqs_Public( $this->get_plugin_name(), $this->get_version(), $this->get_post_type() );
+    $plugin_public = new Dmimag_Faqs_Public( $this->get_plugin_name(), $this->get_version(), $this->get_post_type() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-    
+    $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
+    $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
     /**
      * Shortcode
      *
@@ -303,57 +304,56 @@ class Dmimag_Faqs {
      */    
     $this->loader->add_shortcode( 'dmimag-faqs', $plugin_public, 'dmimag_faqs_shortcode' );
 
-	}
+  }
 
-	/**
-	 * Run the loader to execute all of the hooks with WordPress.
-	 *
-	 * @since    1.0.0
-	 */
-	public function run() {
-		$this->loader->run();
-	}
-
-	/**
-	 * The name of the plugin used to uniquely identify it within the context of
-	 * WordPress and to define internationalization functionality.
-	 *
-	 * @since     1.0.0
-	 * @return    string    The name of the plugin.
-	 */
-	public function get_plugin_name() {
-		return $this->plugin_name;
-	}
-
-	/**
-	 * The reference to the class that orchestrates the hooks with the plugin.
-	 *
-	 * @since     1.0.0
-	 * @return    Dmimag_Faqs_Loader    Orchestrates the hooks of the plugin.
-	 */
-	public function get_loader() {
-		return $this->loader;
-	}
-
-	/**
-	 * Retrieve the version number of the plugin.
-	 *
-	 * @since     1.0.0
-	 * @return    string    The version number of the plugin.
-	 */
-	public function get_version() {
-		return $this->version;
-	}
-  
   /**
-	 * Retrieve the post_type of the plugin.
-	 *
-	 * @since     1.0.0
-	 * @return    string    Custom post type of the plugin.
-	 */
-	public function get_post_type() {
-		return $this->post_type;
-	}
+   * Run the loader to execute all of the hooks with WordPress.
+   *
+   * @since    1.0.0
+   */
+  public function run() {
+    $this->loader->run();
+  }
 
+  /**
+   * The name of the plugin used to uniquely identify it within the context of
+   * WordPress and to define internationalization functionality.
+   *
+   * @since     1.0.0
+   * @return    string    The name of the plugin.
+   */
+  public function get_plugin_name() {
+    return $this->plugin_name;
+  }
+
+  /**
+   * The reference to the class that orchestrates the hooks with the plugin.
+   *
+   * @since     1.0.0
+   * @return    Dmimag_Faqs_Loader    Orchestrates the hooks of the plugin.
+   */
+  public function get_loader() {
+    return $this->loader;
+  }
+
+  /**
+   * Retrieve the version number of the plugin.
+   *
+   * @since     1.0.0
+   * @return    string    The version number of the plugin.
+   */
+  public function get_version() {
+    return $this->version;
+  }
+
+  /**
+   * Retrieve the post_type of the plugin.
+   *
+   * @since     1.0.0
+   * @return    string    Custom post type of the plugin.
+   */
+  public function get_post_type() {
+    return $this->post_type;
+  }
 }
 ?>
