@@ -1,7 +1,6 @@
 (function( $ ) {
   'use strict';
-  
-  $('.dmi-faq-title').on('click', function(event) { // touchstart
+  $('.dmi-faq-title').on('click', function(event) {
     event.preventDefault();
     
     $(this).toggleClass('dmi-faq-title-active');

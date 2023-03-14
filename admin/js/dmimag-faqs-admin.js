@@ -20,14 +20,10 @@
   $(document).on( 'click touchstart', '.dmi-grid-metabox-up', function( event ) { 
     event.preventDefault();
     
-    var faq = $(this).parents('.dmimag-faqs');
-    
+    var faq = $(this).parents('.dmimag-faqs');    
     var editor_id = faq.find('.faqcontent-editor').attr('id');
-
-    wp.editor.remove( editor_id );
-    
-    faq.insertBefore( faq.prev() );
-    
+    wp.editor.remove( editor_id );    
+    faq.insertBefore( faq.prev() );    
     dmimag_faqs_wp_editor( editor_id );
 
     return false;
@@ -37,13 +33,9 @@
     event.preventDefault();
     
     var faq = $(this).parents('.dmimag-faqs');
-
     var editor_id = faq.find('.faqcontent-editor').attr('id');
-
-    wp.editor.remove( editor_id );
-    
-    faq.insertAfter( faq.next() );
-    
+    wp.editor.remove( editor_id );    
+    faq.insertAfter( faq.next() );    
     dmimag_faqs_wp_editor( editor_id );  
     
     return false;
@@ -64,11 +56,9 @@
     event.preventDefault();
     
     var dmimag_faqs = $( this ).parents( '.dmimag-faqs' );
-
-    if ( dmimag_faqs.siblings( '.dmimag-faqs' ).length != '0' ) {
-      
-      dmimag_faqs.remove();  
-      
+    
+    if ( dmimag_faqs.siblings( '.dmimag-faqs' ).length != '0' ) {      
+      dmimag_faqs.remove();      
     } else {
       dmimag_faqs.find( '.dmi-field input' ).val('');
       dmimag_faqs.find( '.dmi-field textarea' ).val('');
@@ -79,10 +69,8 @@
   
   $(document).on( 'click touchstart', '.dmimag-faqs-button-add', function() {
 
-    var dmimag_faqs = $(this).parent( '.postbox-container' ).find( '#dmimag-faqs .inside .dmimag-faqs:last-child()' );
-    
-    var dmimag_faqs_count = $('#dmimag-faqs .inside').find( '.dmimag-faqs' ).length;
-    
+    var dmimag_faqs = $(this).parent( '.postbox-container' ).find( '#dmimag-faqs .inside .dmimag-faqs:last-child()' );    
+    var dmimag_faqs_count = $('#dmimag-faqs .inside').find( '.dmimag-faqs' ).length;    
     var dmimag_faqs_data_count = dmimag_faqs.data('faqs');
     
     if( dmimag_faqs_count < dmimag_faqs_data_count ) {

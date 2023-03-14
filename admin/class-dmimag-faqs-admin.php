@@ -73,7 +73,6 @@ class Dmimag_Faqs_Admin {
      * between the defined hooks and the functions defined in this
      * class.
      */
-
     wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/dmimag-faqs-admin.css', array(), $this->version, 'all' );
 
   }
@@ -96,7 +95,6 @@ class Dmimag_Faqs_Admin {
      * between the defined hooks and the functions defined in this
      * class.
      */
-
     wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dmimag-faqs-admin.js', array( 'jquery', 'jquery-ui-sortable' ), $this->version, 'in_footer' );
 
   }
@@ -130,32 +128,6 @@ class Dmimag_Faqs_Admin {
       <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=<?php echo esc_attr( $post_id ); ?> type=guide]" readonly><span title="<?php _e( 'Copy to Clipboard', $this->plugin_name ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
 <?php
     }
-  }
-
-  /**
-   * Add shortcode column FAQs.
-   *
-   * @since    1.0.0
-   */
-  public function dmimag_faqs_manage_edit_taxonomy_columns( $columns ) {
-
-    $columns['dmimag_faqs_group_shortcode'] = '<span>' . __( 'Shortcode', $this->plugin_name ) . '</span>';
-    return $columns;
-
-  }
-
-  /**
-   * Return shortcode text FAQs Group.
-   *
-   * @since    1.0.0
-   */
-  public function dmimag_faqs_manage_taxonomy_custom_column( $string, $column_name, $term_id ) {
-    if( $column_name == 'dmimag_faqs_group_shortcode' ) {
-      return '
-        <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=' . esc_attr( $term_id ) . ' type=accordion]" readonly><span title="' . __( 'Copy to Clipboard', $this->plugin_name ) . '" class="dmimag-faqs-copy-to-clipboard"></span>
-        <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=' . esc_attr( $term_id ) . ' type=guide]" readonly><span title="' . __( 'Copy to Clipboard', $this->plugin_name ) . '" class="dmimag-faqs-copy-to-clipboard"></span>
-      ';
-    }
-  }
+  }  
 }
 ?>

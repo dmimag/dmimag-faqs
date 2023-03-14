@@ -6,6 +6,8 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
+ * @link       https://faqs.dmimag.site
+ * @since      1.0.0
  * @package    Dmimag_Faqs
  * @subpackage Dmimag_Faqs/includes
  * @author     dmimag <support.plugins@dmimag.site>

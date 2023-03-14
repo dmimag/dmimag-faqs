@@ -65,13 +65,9 @@ class Dmimag_Faqs {
   public function __construct() {
 
     if ( defined( 'DMIMAG_FAQS_VERSION' ) ) {
-
       $this->version = DMIMAG_FAQS_VERSION;
-
     } else {
-
       $this->version = '1.2.2';
-
     }
 
     $this->plugin_name = 'dmimag-faqs';

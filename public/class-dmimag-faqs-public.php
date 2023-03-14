@@ -2,19 +2,11 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://faqs.dmimag.site
- * @since      1.0.0
- *
- * @package    Dmimag_Faqs
- * @subpackage Dmimag_Faqs/public
- */
-
-/**
- * The public-facing functionality of the plugin.
- *
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
+ * @link       https://faqs.dmimag.site
+ * @since      1.0.0
  * @package    Dmimag_Faqs
  * @subpackage Dmimag_Faqs/public
  * @author     dmimag <support.plugins@dmimag.site>
@@ -58,9 +50,7 @@ class Dmimag_Faqs_Public {
   public function __construct( $plugin_name, $version, $post_type ) {
 
     $this->plugin_name = $plugin_name;
-
     $this->version = $version;
-
     $this->post_type = $post_type;
 
   }
@@ -114,7 +104,7 @@ class Dmimag_Faqs_Public {
 
       if ( $query->have_posts() ) {
 ?>
-        <div class="dmi-faqs-row <?php echo $faqs_row_class; ?>">
+        <div class="dmi-faqs-row <?php echo sanitize_html_class( $faqs_row_class ); ?>">
           <div class="dmi-faqs-col dmi-faqs-col-content">
 <?php
         $i = '';
@@ -128,7 +118,7 @@ class Dmimag_Faqs_Public {
             foreach( $post_content as $faq ) {
               $i++;
 ?>
-            <div <?php if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) { ?>id="faq-<?php echo $i; ?>" <?php } ?>class="dmi-faq">
+            <div <?php if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) { ?>id="faq-<?php echo esc_attr( $i ); ?>" <?php } ?>class="dmi-faq">
               <div class="dmi-faq-title">
 <?php
               if ( ! empty( $faq['faqtitle'] ) ) {
@@ -163,7 +153,7 @@ class Dmimag_Faqs_Public {
             foreach( $faqs_title as $key => $faq_title ) {
               if( ! empty( $faq_title ) ) {
 ?>
-              <li><a href="#faq-<?php echo $key; ?> "><?php echo esc_html( $faq_title ); ?></a></li>
+              <li><a href="#faq-<?php echo esc_attr( $key ); ?> "><?php echo esc_html( $faq_title ); ?></a></li>
 <?php
               }
             }

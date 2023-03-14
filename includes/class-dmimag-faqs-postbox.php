@@ -5,6 +5,8 @@
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
+ * @link       https://faqs.dmimag.site
+ * @since      1.0.0
  * @package    Dmimag_Faqs
  * @subpackage Dmimag_Faqs/includes
  * @author     dmimag <support.plugins@dmimag.site>

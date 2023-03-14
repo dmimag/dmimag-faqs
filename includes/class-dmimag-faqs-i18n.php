@@ -5,6 +5,7 @@
  * Loads and defines the internationalization files for this plugin
  * so that it is ready for translation.
  *
+ * @link       https://faqs.dmimag.site
  * @since      1.0.0
  * @package    Dmimag_Faqs
  * @subpackage Dmimag_Faqs/includes

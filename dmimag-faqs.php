@@ -84,10 +84,8 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-dmimag-faqs.php';
  * @since    1.0.0
  */
 function run_dmimag_faqs() {
-  
   $plugin = new Dmimag_Faqs();
   $plugin->run();
-  
 }
 
 run_dmimag_faqs();

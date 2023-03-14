@@ -4,6 +4,7 @@
  *
  * This class defines all code necessary to run during the plugin's deactivation.
  *
+ * @link       https://faqs.dmimag.site
  * @since      1.0.0
  * @package    Dmimag_Faqs
  * @subpackage Dmimag_Faqs/includes

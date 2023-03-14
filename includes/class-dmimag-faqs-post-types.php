@@ -4,9 +4,9 @@
  *
  * @link       https://faqs.dmimag.site
  * @since      1.0.0
- *
  * @package    Dmimag_Faqs
  * @subpackage Dmimag_Faqs/includes
+ * @author     dmimag <support.plugins@dmimag.site>
  */
 class Dmimag_Faqs_Post_Types {
 
@@ -205,7 +205,6 @@ class Dmimag_Faqs_Post_Types {
    *
    */
   public function assign_capabilities( $caps_map, $users  ) {
-
     foreach ( $users as $user ) {
 
       $user_role = get_role( $user );
@@ -217,7 +216,6 @@ class Dmimag_Faqs_Post_Types {
       }
 
     }
-
   }
 
   /**

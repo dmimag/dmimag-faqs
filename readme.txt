@@ -27,6 +27,7 @@ FAQs Plugin. FAQ. Accordion Style, Guide Style
 
 = 1.2.1 =
 - Add  Sanitized, Escaped and Validated Data
+- Fixed minor bugs
 
 = 1.2.0 =
 - Added the ability to sort FAQ
