@@ -104,12 +104,12 @@ class Dmimag_Faqs_Admin {
    *
    * @since    1.1.1
    */
-  public function dmimag_faqs_manage_dmimag_faqs_posts_columns( $columns ) { //add_filter( 'manage_post_posts_columns',
+  public function dmimag_faqs_manage_dmimag_faqs_posts_columns( $columns ) {
 
     $dmimag_faqs_columns = array(
       'cb' => $columns['cb'],
       'title' => $columns['title'],
-      'shortcode' => __( 'Shortcode', $this->plugin_name ),
+      'shortcode' => __( 'Shortcode', 'dmimag-faqs' ),
       'date' => $columns['date']
     );
 
@@ -124,8 +124,8 @@ class Dmimag_Faqs_Admin {
   public function dmimag_faqs_manage_dmimag_faqs_posts_custom_column( $column, $post_id ) { //add_action( 'manage_post_posts_custom_column', 
     if ( $column === 'shortcode' ) {
 ?>
-      <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=<?php echo esc_attr( $post_id ); ?> type=accordion]" readonly><span title="<?php _e( 'Copy to Clipboard', $this->plugin_name ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
-      <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=<?php echo esc_attr( $post_id ); ?> type=guide]" readonly><span title="<?php _e( 'Copy to Clipboard', $this->plugin_name ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
+      <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=<?php echo esc_attr( $post_id ); ?> type=accordion]" readonly><span title="<?php esc_html_e( 'Copy to Clipboard', 'dmimag-faqs' ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
+      <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=<?php echo esc_attr( $post_id ); ?> type=guide]" readonly><span title="<?php esc_html_e( 'Copy to Clipboard', 'dmimag-faqs' ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
 <?php
     }
   }  

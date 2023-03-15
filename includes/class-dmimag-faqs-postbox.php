@@ -67,7 +67,7 @@ class Dmimag_Faqs_Postbox {
   public function dmimag_faqs_create_postbox() {
 
     $options = array();
-    add_meta_box( $this->plugin_name, __( 'FAQ', $this->plugin_name ), array( $this, 'dmimag_faqs_render_postbox' ), array( $this->post_type ), 'normal', 'high', $options ); 
+    add_meta_box( $this->plugin_name, __( 'FAQ', 'dmimag-faqs' ), array( $this, 'dmimag_faqs_render_postbox' ), array( $this->post_type ), 'normal', 'high', $options ); 
 
   }
 
@@ -139,7 +139,7 @@ class Dmimag_Faqs_Postbox {
         <div class="dmi-metabox dmi-grid-row">
           <div class="dmi-grid-col">
             <div class="dmi-grid-row dmi-justify-content-end dmi-align-items-center">
-              <div class="dmi-grid-col dmi-grid-col-auto"><?php _e( 'Sort FAQ', $this->plugin_name ); ?></div><div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-up"></div><div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-down"></div>
+              <div class="dmi-grid-col dmi-grid-col-auto"><?php _e( 'Sort FAQ', 'dmimag-faqs' ); ?></div><div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-up"></div><div class="dmi-grid-col dmi-grid-col-auto dmi-grid-metabox-down"></div>
             </div>
           </div>
         </div>
@@ -147,8 +147,8 @@ class Dmimag_Faqs_Postbox {
           <div class="dmi-grid-col">
 
             <div class="dmi-metabox-description dmi-grid-row">
-              <h4 for="faqtitle"><?php _e( 'FAQ Title', $this->plugin_name ); ?></h4>
-              <span class="description"><?php _e( 'FAQ title text', $this->plugin_name ); ?></span>
+              <h4 for="faqtitle"><?php _e( 'FAQ Title', 'dmimag-faqs' ); ?></h4>
+              <span class="description"><?php _e( 'FAQ title text', 'dmimag-faqs' ); ?></span>
             </div>
 
 
@@ -163,8 +163,8 @@ class Dmimag_Faqs_Postbox {
         <div class="dmi-metabox dmi-metabox-wp_editor dmi-grid-row">
           <div class="dmi-grid-col">
             <div class="dmi-metabox-description dmi-grid-row">
-              <h4 for="faqcontent"><?php _e( 'FAQ Content', $this->plugin_name ); ?></h4>
-              <span class="description"><?php _e( 'FAQ content text', $this->plugin_name ); ?></span>
+              <h4 for="faqcontent"><?php _e( 'FAQ Content', 'dmimag-faqs' ); ?></h4>
+              <span class="description"><?php _e( 'FAQ content text', 'dmimag-faqs' ); ?></span>
             </div>
             <div class="dmi-metabox-field dmi-grid-row">
               <div class="dmi-field dmi-grid-col">
@@ -182,7 +182,7 @@ class Dmimag_Faqs_Postbox {
           <div class="dmi-grid-col">
             <div class="dmi-metabox-field dmi-grid-row">
               <div class="dmi-field dmi-grid-col">
-                <button type="button" class="button button-primary dmimag-faqs-button-remove"><?php _e( 'Remove FAQ', $this->plugin_name ); ?></button>
+                <button type="button" class="button button-primary dmimag-faqs-button-remove"><?php _e( 'Remove FAQ', 'dmimag-faqs' ); ?></button>
               </div>
             </div>
           </div>
@@ -262,7 +262,7 @@ class Dmimag_Faqs_Postbox {
    */
   public function dmimag_faqs_render_button_add( $post ) {
 ?>
-    <button type="button" class="button button-primary dmimag-faqs-button-add"><?php _e( '+ Add FAQ', $this->plugin_name ); ?></button>
+    <button type="button" class="button button-primary dmimag-faqs-button-add"><?php _e( '+ Add FAQ', 'dmimag-faqs' ); ?></button>
 <?php
   }
 
@@ -281,12 +281,12 @@ class Dmimag_Faqs_Postbox {
     }
 ?>
     <div class="inside">
-      <strong style="padding: 0 10px;"><?php esc_html_e( 'Shortcode:',  $this->plugin_name ); ?></strong>
+      <strong style="padding: 0 10px;"><?php esc_html_e( 'Shortcode:', 'dmimag-faqs' ); ?></strong>
       <p>
-        <input type="text" class="dmimag-faqs-shortcode" value='[dmimag-faqs faq=<?php echo intval( $post->ID ); ?> type=accordion]' readonly><span title="<?php esc_html_e( 'Copy to Clipboard', $this->plugin_name ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
+        <input type="text" class="dmimag-faqs-shortcode" value='[dmimag-faqs faq=<?php echo intval( $post->ID ); ?> type=accordion]' readonly><span title="<?php esc_html_e( 'Copy to Clipboard', 'dmimag-faqs' ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
       </p>
       <p>
-        <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=<?php echo intval( $post->ID ); ?> type=guide]" readonly><span title="<?php esc_html_e( 'Copy to Clipboard', $this->plugin_name ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
+        <input type="text" class="dmimag-faqs-shortcode" value="[dmimag-faqs faq=<?php echo intval( $post->ID ); ?> type=guide]" readonly><span title="<?php esc_html_e( 'Copy to Clipboard', 'dmimag-faqs' ); ?>" class="dmimag-faqs-copy-to-clipboard"></span>
       </p>
     </div>
 <?php

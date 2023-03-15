@@ -1,0 +1,184 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: dmimag-faqs\n"
+"POT-Creation-Date: 2023-03-15 09:46+0300\n"
+"PO-Revision-Date: 2023-03-15 09:46+0300\n"
+"Last-Translator: \n"
+"Language-Team: dmimag\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: _e;__;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-dmimag-faqs-admin.php:112
+msgid "Shortcode"
+msgstr ""
+
+#: admin/class-dmimag-faqs-admin.php:127 admin/class-dmimag-faqs-admin.php:128
+#: includes/class-dmimag-faqs-postbox.php:286
+#: includes/class-dmimag-faqs-postbox.php:289
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:73
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:74
+#, php-format
+msgid "Add new %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:75
+#: includes/class-dmimag-faqs-post-types.php:161
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:76
+#: includes/class-dmimag-faqs-post-types.php:77
+#: includes/class-dmimag-faqs-post-types.php:162
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:78
+#: includes/class-dmimag-faqs-post-types.php:168
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:79
+#: includes/class-dmimag-faqs-post-types.php:173
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:80
+#, php-format
+msgid "No %s found in trash"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:81
+#: includes/class-dmimag-faqs-post-types.php:160
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:82
+#, php-format
+msgid "%s Archives"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:83
+#, php-format
+msgid "%s Attributes"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:84
+#, php-format
+msgid "Insert into %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:85
+#, php-format
+msgid "Uploaded to this %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:88
+#: includes/class-dmimag-faqs-post-types.php:166
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:89
+#: includes/class-dmimag-faqs-post-types.php:167
+#, php-format
+msgid "Parent %s:"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:163
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:164
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:165
+#, php-format
+msgid "New %s Name"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:169
+#, php-format
+msgid "Popular %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:170
+#, php-format
+msgid "Separate %s with commas"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:171
+#, php-format
+msgid "Add or remove %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:172
+#, php-format
+msgid "Choose from the most used %s"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:230
+#: includes/class-dmimag-faqs-postbox.php:70
+msgid "FAQ"
+msgstr ""
+
+#: includes/class-dmimag-faqs-post-types.php:231
+#: includes/class-dmimag-faqs-post-types.php:232
+#: includes/class-dmimag-faqs-post-types.php:233
+msgid "FAQs"
+msgstr ""
+
+#: includes/class-dmimag-faqs-postbox.php:142
+msgid "Sort FAQ"
+msgstr ""
+
+#: includes/class-dmimag-faqs-postbox.php:150
+msgid "FAQ Title"
+msgstr ""
+
+#: includes/class-dmimag-faqs-postbox.php:151
+msgid "FAQ title text"
+msgstr ""
+
+#: includes/class-dmimag-faqs-postbox.php:166
+msgid "FAQ Content"
+msgstr ""
+
+#: includes/class-dmimag-faqs-postbox.php:167
+msgid "FAQ content text"
+msgstr ""
+
+#: includes/class-dmimag-faqs-postbox.php:185
+msgid "Remove FAQ"
+msgstr ""
+
+#: includes/class-dmimag-faqs-postbox.php:265
+msgid "+ Add FAQ"
+msgstr ""
+
+#: includes/class-dmimag-faqs-postbox.php:284
+msgid "Shortcode:"
+msgstr ""
