@@ -11,7 +11,19 @@ License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 == Description ==
 
-FAQs Plugin. FAQ. Accordion Style, Guide Style
+DmiMag FAQs - Easy Plugin Frequently Asked Questions (FAQ).
+Call an unlimited number of your own FAQs or guides that fit into your website design.
+
+[FAQ Demo](https://faqs.dmimag.site/#demo)
+
+= Key Features =
+
+* Create unlimited FAQs
+* Uses WYSIWYG editor
+* Requires no settings
+* Automatically generated shortcodes
+* Easily fits into the site design
+* Ordering and sorting FAQ
 
 == Installation ==
 
