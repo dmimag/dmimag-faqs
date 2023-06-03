@@ -1,29 +1,31 @@
 === DmiMag FAQs ===
 Contributors: dmimag
 Donate link: https://faqs.dmimag.site
-Tags: faq, faq accordion style, faq guide style 
+Tags: faq plugin, wordpress faq, faq, faqs, guide, docs, question, answer, accordion 
 Requires at least: 6.0
-Tested up to: 6.1.1
+Tested up to: 6.2
 Requires PHP: 7.4
-Stable tag: 1.2.3
+Stable tag: 1.2.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
+DmiMag FAQs - is a lightweight WordPress FAQ Plugin
+
 == Description ==
 
-DmiMag FAQs - Easy Plugin Frequently Asked Questions (FAQ).
-Call an unlimited number of your own FAQs or guides that fit into your website design.
+DmiMag FAQs is a lightweight WordPress FAQ Plugin. 
+Create an unlimited number of FAQs or Docs (guides) that easily fit into your website design.
 
 [FAQ Demo](https://faqs.dmimag.site/#demo)
 
 = Key Features =
 
-* Create unlimited FAQs
-* Uses WYSIWYG editor
-* Requires no settings
+* Unlimited number of FAQs or Docs (guides)
+* WYSIWYG editor use
 * Automatically generated shortcodes
-* Easily fits into the site design
-* Ordering and sorting FAQ
+* Easy to integrate into website design
+* FAQ Question sorting
+* Schema.org (https://schema.org/FAQPage) support
 
 == Installation ==
 
@@ -32,7 +34,20 @@ Call an unlimited number of your own FAQs or guides that fit into your website d
 3. Create first FAQ
 3. Place shortcode in your post or page
 
+== Screenshots ==
+
+1. List FAQ in panel
+2. Add new FAQ
+3. WYSIWYG editor and add new FAQ, remove FAQ
+
 == Changelog ==
+
+= 1.2.5 =
+- Add Schema.org/FAQPage
+- Fixed minor bugs
+
+= 1.2.4 =
+- Fixing a bug with displaying a button "+ Add FAQ" 
 
 = 1.2.3 =
 - Fixed minor bugs

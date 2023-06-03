@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: dmimag-faqs\n"
-"POT-Creation-Date: 2023-03-15 09:46+0300\n"
+"POT-Creation-Date: 2023-03-20 22:29+0300\n"
 "PO-Revision-Date: 2023-03-15 09:46+0300\n"
 "Last-Translator: \n"
 "Language-Team: dmimag\n"
@@ -22,8 +22,8 @@ msgid "Shortcode"
 msgstr ""
 
 #: admin/class-dmimag-faqs-admin.php:127 admin/class-dmimag-faqs-admin.php:128
-#: includes/class-dmimag-faqs-postbox.php:286
 #: includes/class-dmimag-faqs-postbox.php:289
+#: includes/class-dmimag-faqs-postbox.php:292
 msgid "Copy to Clipboard"
 msgstr ""
 
@@ -156,29 +156,29 @@ msgid "Sort FAQ"
 msgstr ""
 
 #: includes/class-dmimag-faqs-postbox.php:150
-msgid "FAQ Title"
+msgid "FAQ Question"
 msgstr ""
 
 #: includes/class-dmimag-faqs-postbox.php:151
-msgid "FAQ title text"
+msgid "FAQ question text"
 msgstr ""
 
 #: includes/class-dmimag-faqs-postbox.php:166
-msgid "FAQ Content"
+msgid "FAQ Answer"
 msgstr ""
 
 #: includes/class-dmimag-faqs-postbox.php:167
-msgid "FAQ content text"
+msgid "FAQ answer text"
 msgstr ""
 
 #: includes/class-dmimag-faqs-postbox.php:185
-msgid "Remove FAQ"
+msgid "Remove this question FAQ"
 msgstr ""
 
-#: includes/class-dmimag-faqs-postbox.php:265
-msgid "+ Add FAQ"
+#: includes/class-dmimag-faqs-postbox.php:268
+msgid "+ Add new question FAQ"
 msgstr ""
 
-#: includes/class-dmimag-faqs-postbox.php:284
+#: includes/class-dmimag-faqs-postbox.php:287
 msgid "Shortcode:"
 msgstr ""

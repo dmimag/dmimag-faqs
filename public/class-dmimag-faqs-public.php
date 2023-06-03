@@ -61,9 +61,7 @@ class Dmimag_Faqs_Public {
    * @since    1.0.0
    */
   public function enqueue_styles() {
-    
     wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/dmimag-faqs-public.css', array(), $this->version, 'all' );
-
   }
 
   /**
@@ -72,9 +70,7 @@ class Dmimag_Faqs_Public {
    * @since    1.0.0
    */
   public function enqueue_scripts() {
-    
     wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dmimag-faqs-public.js', array( 'jquery' ), $this->version, 'in_footer' );
-    
   }
   
   /**
@@ -86,7 +82,7 @@ class Dmimag_Faqs_Public {
     ob_start();
     
     $faqs_row_class = 'dmi-faqs-row-accordion';
-    
+
     if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) {
       $faqs_title = array();
       $faqs_row_class = 'dmi-faqs-row-guid';
@@ -105,7 +101,7 @@ class Dmimag_Faqs_Public {
       if ( $query->have_posts() ) {
 ?>
         <div class="dmi-faqs-row <?php echo sanitize_html_class( $faqs_row_class ); ?>">
-          <div class="dmi-faqs-col dmi-faqs-col-content">
+          <div itemscope itemtype="https://schema.org/FAQPage" class="dmi-faqs-col dmi-faqs-col-content">
 <?php
         $i = '';
         while ( $query->have_posts() ) {
@@ -118,8 +114,8 @@ class Dmimag_Faqs_Public {
             foreach( $post_content as $faq ) {
               $i++;
 ?>
-            <div <?php if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) { ?>id="faq-<?php echo esc_attr( $i ); ?>" <?php } ?>class="dmi-faq">
-              <div class="dmi-faq-title">
+            <div itemscope itemprop="mainEntity" itemtype="https://schema.org/Question" <?php if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) { ?>id="faq-<?php echo esc_attr( $i ); ?>" <?php } ?>class="dmi-faq">
+              <div itemprop="name" class="dmi-faq-title" >
 <?php
               if ( ! empty( $faq['faqtitle'] ) ) {
                 echo esc_html( $faq['faqtitle'] );
@@ -127,15 +123,20 @@ class Dmimag_Faqs_Public {
                 if( isset( $atts['type'] ) && $atts['type'] == 'guide' ) {
                   $faqs_title[$i] = $faq['faqtitle'];
                 }
+
               }
 ?>
               </div>
-              <div class="dmi-faq-content">
+              <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer" class="dmi-faq-content">
+                <div itemprop="text">
 <?php
               if ( ! empty( $faq['faqcontent'] ) ) {
-                echo apply_filters( 'the_content', wp_kses_post( $faq['faqcontent'] ) );
+                $regex   = get_shortcode_regex( array( 'dmimag-faqs' ) );      
+                $content = preg_replace( "/$regex/", '', $faq['faqcontent'] );
+                echo apply_filters( 'the_content', wp_kses_post( $content ) );
               }
 ?>
+                </div>
               </div>
             </div>
 <?php
@@ -159,7 +160,6 @@ class Dmimag_Faqs_Public {
             }
 ?>
             </ul>
-            
           </div>
 <?php
         }

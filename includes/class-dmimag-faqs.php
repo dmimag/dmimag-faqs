@@ -67,7 +67,7 @@ class Dmimag_Faqs {
     if ( defined( 'DMIMAG_FAQS_VERSION' ) ) {
       $this->version = DMIMAG_FAQS_VERSION;
     } else {
-      $this->version = '1.2.3';
+      $this->version = '1.2.5';
     }
 
     $this->plugin_name = 'dmimag-faqs';

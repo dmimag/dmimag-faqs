@@ -147,8 +147,8 @@ class Dmimag_Faqs_Postbox {
           <div class="dmi-grid-col">
 
             <div class="dmi-metabox-description dmi-grid-row">
-              <h4 for="faqtitle"><?php _e( 'FAQ Title', 'dmimag-faqs' ); ?></h4>
-              <span class="description"><?php _e( 'FAQ title text', 'dmimag-faqs' ); ?></span>
+              <h4 for="faqtitle"><?php _e( 'FAQ Question', 'dmimag-faqs' ); ?></h4>
+              <span class="description"><?php _e( 'FAQ question text', 'dmimag-faqs' ); ?></span>
             </div>
 
 
@@ -163,8 +163,8 @@ class Dmimag_Faqs_Postbox {
         <div class="dmi-metabox dmi-metabox-wp_editor dmi-grid-row">
           <div class="dmi-grid-col">
             <div class="dmi-metabox-description dmi-grid-row">
-              <h4 for="faqcontent"><?php _e( 'FAQ Content', 'dmimag-faqs' ); ?></h4>
-              <span class="description"><?php _e( 'FAQ content text', 'dmimag-faqs' ); ?></span>
+              <h4 for="faqcontent"><?php _e( 'FAQ Answer', 'dmimag-faqs' ); ?></h4>
+              <span class="description"><?php _e( 'FAQ answer text', 'dmimag-faqs' ); ?></span>
             </div>
             <div class="dmi-metabox-field dmi-grid-row">
               <div class="dmi-field dmi-grid-col">
@@ -182,7 +182,7 @@ class Dmimag_Faqs_Postbox {
           <div class="dmi-grid-col">
             <div class="dmi-metabox-field dmi-grid-row">
               <div class="dmi-field dmi-grid-col">
-                <button type="button" class="button button-primary dmimag-faqs-button-remove"><?php _e( 'Remove FAQ', 'dmimag-faqs' ); ?></button>
+                <button type="button" class="button button-primary dmimag-faqs-button-remove"><?php _e( 'Remove this question FAQ', 'dmimag-faqs' ); ?></button>
               </div>
             </div>
           </div>
@@ -261,8 +261,11 @@ class Dmimag_Faqs_Postbox {
    * @param 
    */
   public function dmimag_faqs_render_button_add( $post ) {
+    if ( $this->post_type !== $post->post_type ) {
+      return;
+    }
 ?>
-    <button type="button" class="button button-primary dmimag-faqs-button-add"><?php _e( '+ Add FAQ', 'dmimag-faqs' ); ?></button>
+    <button type="button" class="button button-primary dmimag-faqs-button-add"><?php _e( '+ Add new question FAQ', 'dmimag-faqs' ); ?></button>
 <?php
   }
 
